@@ -149,3 +149,172 @@
 //
 //	return 0;
 //}
+
+// 写一个函数求两个整数的较大值
+//int get_max(int x, int y)
+//{
+//	if (x > y)
+//	{
+//		return x;
+//	}
+//	else
+//	{
+//		return y;
+//	}
+//}
+//
+//int main()
+//{
+//	int n1 = 0;
+//	int n2 = 0;
+//
+//	// 输入
+//	scanf("%d %d", &n1, &n2);
+//	// 求较大值
+//	int m = get_max(n1, n2);
+//	// 输出
+//	printf("%d\n", m);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	//int flag = 0;
+//	//if (!flag)
+//	//{
+//	//	printf("hehe\n");
+//	//}
+//
+//	//int a = -10;
+//	//int b = -a;
+//	//printf("%d\n", b);
+//
+//	//int a = 10;
+//	//printf("%d\n", sizeof(a));
+//	//printf("%d\n", sizeof(int));
+//
+//	int a = 10;
+//	//int b = ++a;
+//	//int b = a++;
+//	//int b = --a;
+//	int b = a--;
+//
+//	printf("a = %d, b = %d\n", a, b);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = (int)3.14;
+//	printf("%d\n", a);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	//int a = 10;
+//	//if (a >= 10)
+//	//{
+//	//	printf("hehe\n");
+//	//}
+//
+//	int a = 10;
+//	if (10 == a)
+//	{
+//		printf("hehe\n");
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 5;
+//	int b = 4;
+//	if (3 == a || 4 == b)
+//	{
+//		printf("hehe\n");
+//	}
+//
+//	//if (3 == a && 4 == b)
+//	//{
+//	//	printf("hehe\n");
+//	//}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 3;
+//	int b = 6;
+//	int m = 0;
+//
+//	//if (a > b)
+//	//{
+//	//	m = a;
+//	//}
+//	//else
+//	//{
+//	//	m = b;
+//	//}
+//
+//	m = a > b ? a : b;
+//
+//	printf("%d\n", m);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 3;
+//	int b = 20;
+//	int c = 0;
+//	int d = (a -= 3, b += a, c = a - b, b = a - 4);
+//	printf("d = %d\n", d);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	// auto可省略
+//	auto int a = 0;
+//
+//	return 0;
+//}
+
+//unsigned int num = 10;
+//typedef unsigned int uint;
+//uint num2 = 10;
+
+//int main()
+//{
+//	int num1 = 10;
+//	register int num2 = 20;
+//
+//	return 0;
+//}
+
+//void test()
+//{
+//	static int a = 5;
+//	a++;
+//	printf("%d ", a);
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		test();
+//		i++;
+//	}
+//
+//	return 0;
+//}
