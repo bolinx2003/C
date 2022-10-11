@@ -12,19 +12,20 @@ void menu()
 
 void game()
 {
+	// 三字棋小游戏的具体实现
 	char ret = 0;
 	// 存放下棋的数据
 	char board[ROW][COL] = { 0 };
 	// 初始化棋盘为全空格
-	InitBoard(board, ROW, COL);
+	init_board(board, ROW, COL);
 	// 打印棋盘
-	DisplayBoard(board, ROW, COL);
+	display_board(board, ROW, COL);
 
 	while (1)
 	{
 		// 玩家下棋
 		player_move(board, ROW, COL);
-		DisplayBoard(board, ROW, COL);
+		display_board(board, ROW, COL);
 		// 判断输赢
 		ret = is_win(board, ROW, COL);
 		if (ret != 'C')
@@ -33,7 +34,7 @@ void game()
 		}
 		// 电脑下棋
 		computer_move(board, ROW, COL); // 随机下棋
-		DisplayBoard(board, ROW, COL);
+		display_board(board, ROW, COL);
 		ret = is_win(board, ROW, COL);
 		if (ret != 'C')
 		{
@@ -52,7 +53,6 @@ void game()
 	{
 		printf("平局\n");
 	}
-	//DisplayBoard(board, ROW, COL);
 }
 
 //

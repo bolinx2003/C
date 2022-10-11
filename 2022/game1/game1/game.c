@@ -2,7 +2,7 @@
 
 #include "game.h"
 
-void InitBoard(char board[ROW][COL], int row, int col)
+void init_board(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
 	for (; i < row; ++i)
@@ -15,7 +15,7 @@ void InitBoard(char board[ROW][COL], int row, int col)
 	}
 }
 
-//void DisplayBoard(char board[ROW][COL], int row, int col)
+//void display_board(char board[ROW][COL], int row, int col)
 //{
 //	int i = 0;
 //	for (; i < row; ++i)
@@ -29,7 +29,7 @@ void InitBoard(char board[ROW][COL], int row, int col)
 //	}
 //}
 
-//void DisplayBoard(char board[ROW][COL], int row, int col)
+//void display_board(char board[ROW][COL], int row, int col)
 //{
 //	int i = 0;
 //	for (; i < row; ++i)
@@ -42,7 +42,7 @@ void InitBoard(char board[ROW][COL], int row, int col)
 //	}
 //}
 
-void DisplayBoard(char board[ROW][COL], int row, int col)
+void display_board(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
 	for (; i < row; ++i)
