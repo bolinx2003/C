@@ -146,7 +146,7 @@ char is_win(char board[ROW][COL], int row, int col)
 		}
 	}
 	// ≈–∂œ¡–
-	for (i = 0; i < row; ++i)
+	for (i = 0; i < col; ++i)
 	{
 		if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[1][i] != ' ')
 		{
