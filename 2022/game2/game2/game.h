@@ -4,12 +4,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+// 有效的行和列
 #define ROW 9
 #define COL 9
 
+// 实际创建数组的行和列
 #define ROWS (ROW + 2)
 #define COLS (COL + 2)
 
+// 雷的个数
 #define EASY_COUNT 10
 
 // 初始化
