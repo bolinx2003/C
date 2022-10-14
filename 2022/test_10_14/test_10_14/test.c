@@ -84,3 +84,96 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int a = 0;
+//	int b = ~a;
+//	printf("a = %d, b = %d\n", a, b);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 11;    // 1011
+//	a |= (1 << 2); // 1111
+//	printf("%d\n", a); // 15
+//	a &= (~(1 << 2));
+//	printf("%d\n", a); // 11
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 3;
+//	int b = a++;
+//	printf("a = %d, b = %d\n", a, b);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = (int)3.14;
+//	printf("%d\n", a);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	int c = (a > b, a = b + 10, a, b = a + 1); // ∂∫∫≈±Ì¥Ô Ω
+//
+//	printf("%d\n", c);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[10] = { [3] = 5,[7] = 9 };
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	char c1 = 3;
+//	char c2 = 127;
+//
+//	char c3 = c1 + c2;
+//	printf("%d\n", c3);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	char a = 0xb6;
+//	short b = 0xb600;
+//	int c = 0xb6000000;
+//
+//	if (a == 0xb6)
+//		printf("a");
+//	if (b == 0xb600)
+//		printf("b");
+//	if (c == 0xb6000000)
+//		printf("c");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	char c = 1;
+//
+//	printf("%u\n", sizeof(c));
+//	printf("%u\n", sizeof(+c));
+//	printf("%u\n", sizeof(-c));
+//
+//	return 0;
+//}
+
