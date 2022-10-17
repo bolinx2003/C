@@ -133,3 +133,42 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	// 方式一
+//	int* p = arr;
+//	int i = 0;
+//	for (; i < sz; ++i)
+//	{
+//		printf("%d ", *p++);
+//	}
+//	printf("\n");
+//
+//	// 方式二
+//	p = arr;
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	printf("\n");
+//
+//	// 方式三
+//	for (p = arr; p < &arr[sz]; ++p)
+//	{
+//		printf("%d ", *p);
+//	}
+//	printf("\n");
+//
+//	// 用下标访问
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
