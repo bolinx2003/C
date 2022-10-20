@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+ï»¿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
 #include <string.h>
@@ -49,11 +49,28 @@
 //	while (line<=20000)
 //	{
 //		++line;
-//		printf("ÇÃ´úÂë£º%d\n", line);
+//		printf("æ•²ä»£ç ï¼š%d\n", line);
 //	}
 //
 //	if (line > 20000)
-//		printf("ºÃoffer\n");
+//		printf("å¥½offer\n");
+//
+//	return 0;
+//}
+
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//
+//int main()
+//{
+//	int n1 = 0;
+//	int n2 = 0;
+//	scanf("%d %d", &n1, &n2);
+//
+//	int sum = Add(n1, n2);
+//	printf("sum = %d\n", sum);
 //
 //	return 0;
 //}
