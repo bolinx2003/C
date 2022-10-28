@@ -411,12 +411,126 @@
 //	printf("\n");
 //}
 //
+
+//void move(int* p, int sz)
+//{
+//	int* left = p;
+//	int* right = p + sz - 1;
+//
+//	while (left < right)
+//	{
+//		// 左边找一个偶数
+//		while (((*left) % 2 == 1) && (left < right))
+//		{
+//			left++;
+//		}
+//
+//		// 右边找一个奇数
+//		while (((*right) % 2 == 0) && (left < right))
+//		{
+//			right--;
+//		}
+//
+//		// 交换
+//		if (left < right)
+//		{
+//			int tmp = *left;
+//			*left = *right;
+//			*right = tmp;
+//		}
+//	}
+//}
+
+//void print(int* p, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	printf("\n");
+//}
+
+//void print(int* p, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", *p);
+//		p++;
+//	}
+//	printf("\n");
+//}
+
+//void print(int* p, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", *p++);
+//	}
+//	printf("\n");
+//}
+
 //int main()
 //{
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	move(arr, sz);
 //	print(arr, sz);
+//
+//	return 0;
+//}
+
+// 打印杨辉三角
+//int main()
+//{
+//	int arr[10][10] = { 0 };
+//
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <= i; j++)
+//		{
+//			if (j == 0)
+//			{
+//				arr[i][j] = 1;
+//			}
+//			else if (i == j)
+//			{
+//				arr[i][j] = 1;
+//			}
+//			else
+//			{
+//				arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//			}
+//
+//			printf("%-3d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+// 计算2的n次方
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//
+//	// 方法1
+//	int ret = 1;
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		ret *= 2;
+//	}
+//	printf("%d\n", ret);
+//
+//	// 方法2
+//	printf("%d\n", 1 << n);
 //
 //	return 0;
 //}
