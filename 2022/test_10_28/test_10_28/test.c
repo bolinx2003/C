@@ -340,3 +340,83 @@
 //
 //	return 0;
 //}
+
+// 1瓶汽水1块钱，2个空瓶换1瓶汽水
+//int main()
+//{
+//	int money = 0; // 钱
+//	scanf("%d", &money);
+//
+//	int total = money; // 买的喝了
+//	int empty = total; // 空瓶
+//
+//	// 置换
+//	while (empty >= 2)
+//	{
+//		total += (empty / 2);
+//		empty -= (empty / 2);
+//	}
+//
+//	// 若最后剩1个空瓶，可以借1个空瓶，换汽水喝后再还回去
+//	if (1 == empty)
+//	{
+//		empty++; // 借1个空瓶
+//		total += (empty / 2);
+//		empty -= (empty / 2);
+//		empty--; // 还回去
+//	}
+//
+//	printf("%d\n", total);
+//
+//	return 0;
+//}
+
+// 让奇数位于偶数的前面
+//void move(int arr[], int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//
+//	while (left < right)
+//	{
+//		// 左边找一个偶数
+//		while ((arr[left] % 2 == 1) && (left < right))
+//		{
+//			left++;
+//		}
+//
+//		// 右边找一个奇数
+//		while ((arr[right] % 2 == 0) && (left < right))
+//		{
+//			right--;
+//		}
+//
+//		// 交换
+//		if (left < right)
+//		{
+//			int tmp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = tmp;
+//		}
+//	}
+//}
+//
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; ++i)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	move(arr, sz);
+//	print(arr, sz);
+//
+//	return 0;
+//}
