@@ -5,12 +5,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX 1000
+//#define MAX 1000
 
 #define NAME_MAX 20
 #define SEX_MAX 5
 #define TELE_MAX 12
 #define ADDR_MAX 30
+
+// 通讯录初始状态的容量大小
+#define DEFAULT_SZ 3
 
 enum Option
 {
@@ -33,14 +36,26 @@ typedef struct PeoInfo
 	char addr[ADDR_MAX]; // 住址
 }PeoInfo;
 
+// 静态的版本
+//typedef struct Contact
+//{
+//	PeoInfo data[MAX]; // 可以存放1000个人的信息
+//	int sz;            // 记录通讯录中已经保存的信息个数
+//}Contact;
+
+// 动态的版本
 typedef struct Contact
 {
-	PeoInfo data[MAX]; // 可以存放1000个人的信息
-	int sz;            // 记录通讯录中已经保存的信息个数
+	PeoInfo* data; // 指向联系人信息数组的指针
+	int sz;        // 记录通讯录中已经保存的信息个数
+	int capacity;  // 记录通讯录当前的最大容量
 }Contact;
 
 // 初始化通讯录
 void InitContact(Contact* pc);
+
+// 销毁通讯录
+void DestroyContact(Contact* pc);
 
 // 增加联系人的信息
 void AddContact(Contact* pc);

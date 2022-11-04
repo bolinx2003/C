@@ -2,24 +2,78 @@
 
 #include "contact.h"
 
+// 静态的版本
+//void InitContact(Contact* pc)
+//{
+//	assert(pc);
+//
+//	// 全部初始化为0
+//	memset(pc->data, 0, sizeof(pc->data));
+//	pc->sz = 0;
+//}
+
+// 动态的版本
 void InitContact(Contact* pc)
 {
 	assert(pc);
 
-	// 全部初始化为0
-	memset(pc->data, 0, sizeof(pc->data));
 	pc->sz = 0;
+	pc->capacity = DEFAULT_SZ;
+	// calloc会把空间默认初始化成0
+	pc->data = (PeoInfo*)calloc(pc->capacity, sizeof(PeoInfo));
+	if (pc->data == NULL)
+	{
+		perror("InitContact::calloc");
+		return;
+	}
+	printf("通讯录初始化成功\n");
+}
+
+void DestroyContact(Contact* pc)
+{
+	assert(pc);
+
+	free(pc->data);
+	pc->data = NULL;
+	pc->capacity = 0;
+	pc->sz = 0;
+	printf("销毁成功\n");
+}
+
+static void CheckCapacity(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->sz == pc->capacity)
+	{
+		// 扩容
+		PeoInfo* tmp = (PeoInfo*)realloc(pc->data, (pc->capacity + 2) * sizeof(PeoInfo));
+		if (tmp == NULL)
+		{
+			perror("CheckCapacity::realloc");
+			return;
+		}
+
+		// 扩容成功
+		pc->data = tmp;
+		pc->capacity += 2;
+		printf("增容成功\n");
+	}
 }
 
 void AddContact(Contact* pc)
 {
 	assert(pc);
 
-	if (pc->sz == MAX)
-	{
-		printf("通讯录已满，无法添加\n");
-		return;
-	}
+	// 静态的版本
+	//if (pc->sz == MAX)
+	//{
+	//	printf("通讯录已满，无法添加\n");
+	//	return;
+	//}
+
+	// 动态的版本
+	CheckCapacity(pc);
 
 	// 录入信息
 	printf("请输入姓名:>");

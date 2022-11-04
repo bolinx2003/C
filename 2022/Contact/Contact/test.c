@@ -48,6 +48,7 @@ void test()
 			PrintContact(&con);
 			break;
 		case EXIT:
+			DestroyContact(&con);
 			printf("退出通讯录\n");
 			break;
 		default:
