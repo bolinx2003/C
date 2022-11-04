@@ -318,3 +318,96 @@
 //
 //	return 0;
 //}
+
+// 修改默认对齐数
+//#pragma pack(4)
+//struct S
+//{
+//	char ch;
+//	double d;
+//};
+//#pragma pack()
+//
+//int main()
+//{
+//	printf("%d\n", sizeof(struct S));
+//
+//	return 0;
+//}
+
+// 位段
+//struct A
+//{
+//	int a : 2;
+//	int b : 5;
+//	int c : 10;
+//	int d : 30;
+//};
+//
+//int main()
+//{
+//	printf("%u\n", sizeof(struct A));
+//
+//	return 0;
+//}
+
+// 枚举类型
+//enum Sex
+//{
+//	MALE,
+//	FEMALE,
+//	SECRET
+//};
+//
+//int main()
+//{
+//	enum Sex s = FEMALE;
+//
+//	return 0;
+//}
+
+// 使用指针判断大小端
+//int check_sys()
+//{
+//	int i = 1;
+//	return *(char*)&i;
+//}
+
+// 使用联合体（共用体）判断大小端
+//int check_sys()
+//{
+//	union Un
+//	{
+//		char c;
+//		int i;
+//	}u;
+//	u.i = 1;
+//	return u.c;
+//}
+//
+//int main()
+//{
+//	if (1 == check_sys())
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//
+//	return 0;
+//}
+
+//union Un
+//{
+//	char arr[5];
+//	int i;
+//};
+//
+//int main()
+//{
+//	printf("%d\n", sizeof(union Un));
+//
+//	return 0;
+//}
