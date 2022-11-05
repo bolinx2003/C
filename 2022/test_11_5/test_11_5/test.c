@@ -262,3 +262,115 @@
 //
 //	return 0;
 //}
+
+//struct S
+//{
+//	int i;
+//	int arr[0]; // 柔性数组成员
+//};
+//
+//struct S
+//{
+//	int i;
+//	int arr[]; // 柔性数组成员
+//};
+//
+//int main()
+//{
+//	//printf("%d\n", sizeof(struct S));
+//	struct S* p = (struct S*)malloc(sizeof(struct S) + 40);
+//	if (p == NULL)
+//	{
+//		perror("malloc");
+//		return 1;
+//	}
+//
+//	// 使用
+//	p->i = 100;
+//
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		p->arr[i] = i;
+//	}
+//	//for (i = 0; i < 10; i++)
+//	//{
+//	//	printf("%d ", p->arr[i]);
+//	//}
+//
+//	// 扩容
+//	struct S* tmp = (struct S*)realloc(p, sizeof(struct S) + 80);
+//	if (tmp == NULL)
+//	{
+//		perror("realloc");
+//		return 1;
+//	}
+//	else
+//	{
+//		p = tmp;
+//	}
+//
+//	// 使用
+//	for (i = 10; i < 20; i++)
+//	{
+//		p->arr[i] = i;
+//	}
+//	for (i = 0; i < 20; i++)
+//	{
+//		printf("%d ", i);
+//	}
+//
+//	// 释放
+//	free(p);
+//	p = NULL;
+//
+//	return 0;
+//}
+
+// 柔性数组的替代方案
+//struct S
+//{
+//	int num;
+//	int* arr;
+//};
+//
+//int main()
+//{
+//	struct S* p = (struct S*)malloc(sizeof(struct S));
+//	if (p == NULL)
+//	{
+//		perror("malloc");
+//		return 1;
+//	}
+//	p->arr = (int*)malloc(40);
+//	if (p->arr == NULL)
+//	{
+//		perror("malloc");
+//		free(p);
+//		p = NULL;
+//		return 1;
+//	}
+//
+//	// 使用
+//	// ...
+//
+//	// 扩容
+//	int* tmp = (int*)realloc(p->arr, 80);
+//	if (tmp == NULL)
+//	{
+//		perror("realloc");
+//		return 1;
+//	}
+//	else
+//	{
+//		p->arr = tmp;
+//	}
+//
+//	// 释放
+//	free(p->arr);
+//	p->arr = NULL;
+//	free(p);
+//	p = NULL;
+//
+//	return 0;
+//}
