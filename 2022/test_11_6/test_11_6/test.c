@@ -1,6 +1,7 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
+#include <stdlib.h>
 
 //int main()
 //{
@@ -192,6 +193,84 @@
 //
 //	fwrite(&s, sizeof(struct Stu), 1, pf);
 //
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	// 打开文件
+//	FILE* pf = fopen("test3.txt", "wb");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//	// 写文件
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		fwrite(arr + i, sizeof(arr[0]), 1, pf);
+//	}
+//
+//	// 关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	// 打开文件
+//	FILE* pf = fopen("test3.txt", "rb");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//
+//	// 读文件
+//	int tmp = 0;
+//	int* p = NULL;
+//	int count = 0;
+//	while (fread(&tmp, sizeof(int), 1, pf))
+//	{
+//		int* buf = realloc(p, (++count) * sizeof(int));
+//		if (NULL == buf)
+//		{
+//			perror("realloc");
+//			return 1;
+//		}
+//		else
+//		{
+//			p = buf;
+//			p[count - 1] = tmp;
+//		}
+//	}
+//
+//	if (ferror(pf))
+//	{
+//		printf("遇到错误\n");
+//		return 1;
+//	}
+//	else if (feof(pf))
+//	{
+//		printf("读取结束\n");
+//	}
+//
+//	int i = 0;
+//	for (i = 0; i < count; i++)
+//	{
+//		printf("%d ", p[i]);
+//	}
+//
+//	// 关闭文件
 //	fclose(pf);
 //	pf = NULL;
 //
