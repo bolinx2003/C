@@ -276,3 +276,145 @@
 //
 //	return 0;
 //}
+
+//int main()
+//{
+//	FILE* pf = fopen("log.txt", "w");
+//	if (pf == NULL)
+//	{
+//		perror("fopen");
+//		return 1;
+//	}
+//
+//	// 生成日志
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		fprintf(pf, "function name: %s, file name: %s, date: %s, time: %s, line: %d\n", __func__, __FILE__, __DATE__, __TIME__, __LINE__);
+//	}
+//
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+//#define NUM 100
+//
+//// 宏
+//#define MAX(x, y) ((x)>(y)?(x):(y))
+//#define DOUBLE(x) ((x)+(x))
+//#define SQUARE(x) ((x)*(x))
+//
+//int main()
+//{
+//	printf("%d\n", NUM);
+//	printf("%d\n", DOUBLE(100));
+//	printf("%d\n", SQUARE(100));
+//
+//	return 0;
+//}
+
+// 把宏的参数插入到字符串中
+//#define PRINT(N) printf("The value of " #N " is %d.\n", N)
+//
+//int main()
+//{
+//	int a = 10;
+//	PRINT(a);
+//
+//	int b = 20;
+//	PRINT(b);
+//
+//	return 0;
+//}
+
+//#define PRINT(N, format) printf("The value of " #N " is " format ".\n", N)
+//
+//int main()
+//{
+//	int a = 100;
+//	double pai = 3.1415;
+//
+//	PRINT(a, "%d");
+//	PRINT(pai, "%lf");
+//
+//	return 0;
+//}
+
+//#define CAT(sum, num) sum##num
+// 续行符
+//#define CAT(sum, num) \
+//	sum##num
+//
+//int main()
+//{
+//	int sum3 = 10;
+//	printf("%d\n", CAT(sum, 3));
+//
+//	return 0;
+//}
+
+//#define MAX(x, y) ((x)>(y)?(x):(y))
+//
+//int main()
+//{
+//	int a = 5;
+//	int b = 8;
+//	int c = MAX(a++, b++); // 带副作用的宏参数
+//
+//	printf("a = %d, b = %d, c = %d\n", a, b, c);
+//
+//	return 0;
+//}
+
+// 条件编译
+//#define __DEBUG__ 0
+//
+//int main()
+//{
+//#if __DEBUG__
+//	printf("test\n");
+//#endif
+//	return 0;
+//}
+
+//#define NUM 3
+//
+//int main()
+//{
+//#if NUM==1
+//	printf("1\n");
+//#elif NUM == 2
+//	printf("2\n");
+//#else
+//	printf("else\n");
+//#endif
+//
+//	return 0;
+//}
+
+//#define __TEST__
+//
+//int main()
+//{
+//#if defined(__TEST__)
+//	printf("test1\n");
+//#endif // defined(__TEST__)
+//
+//#ifdef __TEST__
+//	printf("test2\n");
+//#endif // __TEST__
+//
+//#undef __TEST__
+//
+//#if !defined(__TEST__)
+//	printf("test3\n");
+//#endif // !defined(__TEST__)
+//
+//#ifndef __TEST__
+//	printf("test4\n");
+//#endif // !__TEST__
+//
+//	return 0;
+//}

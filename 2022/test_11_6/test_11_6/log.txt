@@ -1,0 +1,10 @@
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
+function name: main, file name: C:\Users\xiang\source\repos\C\2022\test_11_6\test_11_6\test.c, date: Nov  6 2022, time: 20:03:56, line: 293
