@@ -2,44 +2,6 @@
 
 #include "contact.h"
 
-// 静态的版本
-//void InitContact(Contact* pc)
-//{
-//	assert(pc);
-//
-//	// 全部初始化为0
-//	memset(pc->data, 0, sizeof(pc->data));
-//	pc->sz = 0;
-//}
-
-// 动态的版本
-void InitContact(Contact* pc)
-{
-	assert(pc);
-
-	pc->sz = 0;
-	pc->capacity = DEFAULT_SZ;
-	// calloc会把空间默认初始化成0
-	pc->data = (PeoInfo*)calloc(pc->capacity, sizeof(PeoInfo));
-	if (pc->data == NULL)
-	{
-		perror("InitContact::calloc");
-		return;
-	}
-	printf("通讯录初始化成功\n");
-}
-
-void DestroyContact(Contact* pc)
-{
-	assert(pc);
-
-	free(pc->data);
-	pc->data = NULL;
-	pc->capacity = 0;
-	pc->sz = 0;
-	printf("销毁成功\n");
-}
-
 static void CheckCapacity(Contact* pc)
 {
 	assert(pc);
@@ -59,6 +21,120 @@ static void CheckCapacity(Contact* pc)
 		pc->capacity += 2;
 		printf("增容成功\n");
 	}
+}
+
+// 静态的版本
+//void InitContact(Contact* pc)
+//{
+//	assert(pc);
+//
+//	// 全部初始化为0
+//	memset(pc->data, 0, sizeof(pc->data));
+//	pc->sz = 0;
+//
+//	printf("初始化成功\n");
+//}
+
+// 动态的版本
+//void InitContact(Contact* pc)
+//{
+//	assert(pc);
+//
+//	pc->sz = 0;
+//	pc->capacity = DEFAULT_SZ;
+//	// calloc会把空间默认初始化成0
+//	pc->data = (PeoInfo*)calloc(pc->capacity, sizeof(PeoInfo));
+//	if (pc->data == NULL)
+//	{
+//		perror("InitContact::calloc");
+//		return;
+//	}
+//	printf("初始化成功\n");
+//}
+
+static void LoadContact(Contact* pc)
+{
+	assert(pc);
+
+	// 打开文件
+	FILE* pf = fopen("contact.dat", "rb");
+	if (pf == NULL)
+	{
+		perror("LoadContact::fopen");
+		return;
+	}
+
+	// 读文件
+	PeoInfo tmp = { 0 };
+	while (fread(&tmp, sizeof(PeoInfo), 1, pf))
+	{
+		CheckCapacity(pc);
+		pc->data[pc->sz++] = tmp;
+	}
+
+	// 关闭文件
+	fclose(pf);
+	pf = NULL;
+
+	printf("加载成功\n");
+}
+
+// 文件的版本
+void InitContact(Contact* pc)
+{
+	assert(pc);
+
+	pc->sz = 0;
+	pc->capacity = DEFAULT_SZ;
+	// calloc会把空间默认初始化成0
+	pc->data = (PeoInfo*)calloc(pc->capacity, sizeof(PeoInfo));
+	if (pc->data == NULL)
+	{
+		perror("InitContact::calloc");
+		return;
+	}
+
+	// 加载文件信息到通讯录中
+	LoadContact(pc);
+
+	printf("通讯录初始化成功\n");
+}
+
+void DestroyContact(Contact* pc)
+{
+	assert(pc);
+
+	free(pc->data);
+	pc->data = NULL;
+	pc->capacity = 0;
+	pc->sz = 0;
+	printf("销毁成功\n");
+}
+
+void SaveContact(const Contact* pc)
+{
+	assert(pc);
+
+	// 打开文件
+	FILE* pf = fopen("contact.dat", "wb");
+	if (pf == NULL)
+	{
+		perror("SaveContact::fopen");
+		return;
+	}
+
+	// 写文件
+	int i = 0;
+	for (i = 0; i < pc->sz; i++)
+	{
+		fwrite(pc->data + i, sizeof(PeoInfo), 1, pf);
+	}
+
+	// 关闭文件
+	fclose(pf);
+	pf = NULL;
+
+	printf("保存成功\n");
 }
 
 void AddContact(Contact* pc)

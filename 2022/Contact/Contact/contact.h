@@ -23,7 +23,8 @@ enum Option
 	SEARCH, // 3
 	MODIFY, // 4
 	SORT,   // 5
-	PRINT   // 6
+	PRINT,  // 6
+	SAVE    // 7
 };
 
 // 存放一个人的信息
@@ -56,6 +57,9 @@ void InitContact(Contact* pc);
 
 // 销毁通讯录
 void DestroyContact(Contact* pc);
+
+// 保存通讯录到文件
+void SaveContact(const Contact* pc);
 
 // 增加联系人的信息
 void AddContact(Contact* pc);

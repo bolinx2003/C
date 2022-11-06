@@ -8,7 +8,7 @@ void menu()
 	printf("************ 1. add       2. del      ************\n");
 	printf("************ 3. search    4. modify   ************\n");
 	printf("************ 5. sort      6. print    ************\n");
-	printf("************ 0. exit                  ************\n");
+	printf("************ 7. save      0. exit     ************\n");
 	printf("**************************************************\n");
 }
 
@@ -47,7 +47,10 @@ void test()
 		case PRINT:
 			PrintContact(&con);
 			break;
+		case SAVE:
+			SaveContact(&con);
 		case EXIT:
+			SaveContact(&con);
 			DestroyContact(&con);
 			printf("退出通讯录\n");
 			break;
